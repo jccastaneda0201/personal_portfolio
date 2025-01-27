@@ -1,1 +1,29 @@
-<p>projects works!</p>
+<!--/item-->
+<div class="item">
+  <div class="row">
+    @for(proyectos of projects; track proyectos.id){
+    <div class="col-sm-4">
+      <a href="./work.html" class="black-image-project-hover">
+        <img src="images/work02-hover.jpg" alt="Image" class="img-responsive" />
+      </a>
+      <div class="card-container">
+        <h4>{{ proyectos.categoria }}</h4>
+        <h3>{{ proyectos.titulo }}</h3>
+        <p>
+          {{ proyectos.descripcion }}
+        </p>
+        <a
+          class="btn btn-default"
+          href="https://github.com/jccastaneda0201"
+          target="_blank"
+          aria-label="GitHub"
+          >Descubrir
+          <i class="fi fi-brands-github"></i>
+        </a>
+      </div>
+    </div>
+    }
+  </div>
+  <!--/row-->
+</div>
+<!--/item-->
