@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { UsersService } from '../../services/users.service';
+import User from '../../interfaces/user.interface';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +10,25 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  userService = inject(UsersService)
+  usuario: User[] = []
+
+  async ngOnInit() {
+    try {
+      this.usuario = await this.userService.getAllUsers()
+      console.log(this.usuario);
+    }
+    catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+
+
+
+
+
   isSobreMiActive: boolean = false;
 
   updateNavbarClass(route: string) {

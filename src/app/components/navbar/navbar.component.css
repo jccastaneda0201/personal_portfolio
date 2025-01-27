@@ -1,3 +1,10 @@
-ul {
-  display: block !important;
+.profile-img {
+  margin-top: 3rem;
+}
+
+.social-links {
+  i {
+    margin-top: 6px;
+    margin-left: 1.5px;
+  }
 }

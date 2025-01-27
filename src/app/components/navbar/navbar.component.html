@@ -1,3 +1,4 @@
+@for (perfil of usuario; track $index) {
 <header id="header" class="header dark-background d-flex flex-column">
   <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -5,32 +6,79 @@
     <img src="images/profileJc.jpg" alt="" class="img-fluid rounded-circle">
   </div>
 
-  <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+  <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
     <!-- Uncomment the line below if you also wish to use an image logo -->
     <!-- <img src="assets/img/logo.png" alt=""> -->
-    <h1 class="sitename">Juan C Castañeda</h1><br>
+    <h2 class="sitename">{{perfil.nombre}}</h2>
   </a>
 
   <div class="social-links text-center">
-    <a href="#" class="linkedin"><i class="fi fi-brands-linkedin"></i></a>
-    <a href="#" class="github"><i class="fi fi-brands-github"
+    <a 
+    href="{{perfil.linkedin}}" 
+    target="_blank" 
+    class="linkedin">
+    <i class="fi fi-brands-linkedin"></i></a>
+    <a 
+    href="{{perfil.github}}" 
+    target="_blank" 
+    class="github">
+    <i class="fi fi-brands-github"
       ></i></a>
-      <a href="#" class="instagram"><i class="fi fi-brands-instagram"></i></a>
-      <a href="#" class="facebook"><i class="fi fi-brands-facebook"></i></a>
-    
-  </div>
+      <a 
+      href="{{perfil.instagram}}" 
+      class="instagram">
+      <i class="fi fi-brands-instagram"></i></a>
+      <a 
+      href="{{perfil.websiteURL}}" 
+      class="personal-website">
+      <i class="fi fi-rr-site-alt"></i></a>
 
+  </div>
   <nav id="navmenu" class="navmenu">
     <ul>
-      <li><a href="#hero" class="active"><i class="fi fi-rr-house-chimney"></i>Home</a></li>
-      <li><a href="#about"><i class="fi fi-rr-user"
-        ></i> About</a></li>
-      <li><a href="#resume"><i class="fi fi-rr-poll-h"></i> Resume</a></li>
-      <li><a href="#portfolio"><i class="fi fi-rr-code-branch"
-        ></i> Portfolio</a></li>
-      <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-      <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      <li>
+        <a
+          [routerLink]="['/']"
+          routerLinkActive="active-link"
+          (click)="updateNavbarClass('/')"
+        ><i class="fi fi-rr-house-chimney navicon"></i>Home
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/sobremi']"
+          routerLinkActive="active-link"
+          (click)="updateNavbarClass('/sobremi')"
+        ><i class="fi fi-rr-user navicon"></i>Sobre mí
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/trabajos']"
+          routerLinkActive="active-link"
+          (click)="updateNavbarClass('/sobremi')"
+        ><i class="fi fi-rr-career-growth navicon" ></i>Educacion & Trabajo
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/trabajos']"
+          routerLinkActive="active-link"
+          (click)="updateNavbarClass('/sobremi')"
+        ><i class="fi fi-rr-code-branch navicon"
+        ></i>Portafolio
+        </a>
+      </li>
+      <li>
+        <a
+          [routerLink]="['/contacto']"
+          routerLinkActive="active-link"
+          (click)="updateNavbarClass('/sobremi')"
+        ><i class="fi fi-rr-message-code navicon"></i>Contactar
+        </a>
+      </li>
     </ul>
   </nav>
 
 </header>
+}
