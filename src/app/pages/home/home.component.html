@@ -1,23 +1,17 @@
+<section id="hero" class="hero section dark-background">
+  <img src="images/space.jpg" alt="" data-aos="fade-in" class="" />
 
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="hero-full-wrapper">
-          <div class="text-content">
-            <h1>
-              Hello, my name is<br />
-              @for (usuarios of usuario; track $index) {
-              <span id="typed-strings">
-                <span>{{ usuarios.nombre }} {{ usuarios.apellido }}</span>
-                <br />
-                <span>{{ usuarios.trabajoActual }}</span>
-              </span>
-              <span id="typed"></span>
-              }
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    @for (usuarios of usuario; track $index) {
+    <h2>{{ usuarios.nombre }} {{ usuarios.apellido }}</h2>
+    <p>
+      Soy
+      <span class="typed" data-typed-items="Designer, Developer, Freelancer">{{
+        usuarios.trabajoActual
+      }}</span
+      ><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span
+      ><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+    </p>
+    }
   </div>
-
+</section>

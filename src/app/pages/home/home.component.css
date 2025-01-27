@@ -1,3 +1,7 @@
-.text-content h1 span {
-  font-size: 90px !important;
+.container {
+  p {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 1rem;
+  }
 }

@@ -3,36 +3,31 @@
   <i class="header-toggle d-xl-none bi bi-list"></i>
 
   <div class="profile-img">
-    <img src="images/profileJc.jpg" alt="" class="img-fluid rounded-circle">
+    <img src="images/profileJc.jpg" alt="" class="img-fluid rounded-circle" />
   </div>
 
-  <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
+  <a
+    [routerLink]="['/']"
+    class="logo d-flex align-items-center justify-content-center"
+  >
     <!-- Uncomment the line below if you also wish to use an image logo -->
     <!-- <img src="assets/img/logo.png" alt=""> -->
-    <h2 class="sitename">{{perfil.nombre}}</h2>
+    <h2 class="sitename">{{ perfil.nombre }}</h2>
   </a>
 
   <div class="social-links text-center">
-    <a 
-    href="{{perfil.linkedin}}" 
-    target="_blank" 
-    class="linkedin">
-    <i class="fi fi-brands-linkedin"></i></a>
-    <a 
-    href="{{perfil.github}}" 
-    target="_blank" 
-    class="github">
-    <i class="fi fi-brands-github"
-      ></i></a>
-      <a 
-      href="{{perfil.instagram}}" 
-      class="instagram">
-      <i class="fi fi-brands-instagram"></i></a>
-      <a 
-      href="{{perfil.websiteURL}}" 
-      class="personal-website">
-      <i class="fi fi-rr-site-alt"></i></a>
-
+    <a href="{{ perfil.linkedin }}" target="_blank" class="linkedin">
+      <i class="fi fi-brands-linkedin"></i
+    ></a>
+    <a href="{{ perfil.github }}" target="_blank" class="github">
+      <i class="fi fi-brands-github"></i
+    ></a>
+    <a href="{{ perfil.instagram }}" class="instagram">
+      <i class="fi fi-brands-instagram"></i
+    ></a>
+    <a href="{{ perfil.websiteURL }}" class="personal-website">
+      <i class="fi fi-rr-site-alt"></i
+    ></a>
   </div>
   <nav id="navmenu" class="navmenu">
     <ul>
@@ -41,7 +36,7 @@
           [routerLink]="['/']"
           routerLinkActive="active-link"
           (click)="updateNavbarClass('/')"
-        ><i class="fi fi-rr-house-chimney navicon"></i>Home
+          ><i class="fi fi-rr-house-chimney navicon"></i>Home
         </a>
       </li>
       <li>
@@ -49,7 +44,7 @@
           [routerLink]="['/sobremi']"
           routerLinkActive="active-link"
           (click)="updateNavbarClass('/sobremi')"
-        ><i class="fi fi-rr-user navicon"></i>Sobre mí
+          ><i class="fi fi-rr-user navicon"></i>Sobre mí
         </a>
       </li>
       <li>
@@ -57,7 +52,7 @@
           [routerLink]="['/trabajos']"
           routerLinkActive="active-link"
           (click)="updateNavbarClass('/sobremi')"
-        ><i class="fi fi-rr-career-growth navicon" ></i>Educacion & Trabajo
+          ><i class="fi fi-rr-career-growth navicon"></i>Educacion & Trabajo
         </a>
       </li>
       <li>
@@ -65,8 +60,7 @@
           [routerLink]="['/trabajos']"
           routerLinkActive="active-link"
           (click)="updateNavbarClass('/sobremi')"
-        ><i class="fi fi-rr-code-branch navicon"
-        ></i>Portafolio
+          ><i class="fi fi-rr-code-branch navicon"></i>Portafolio
         </a>
       </li>
       <li>
@@ -74,11 +68,10 @@
           [routerLink]="['/contacto']"
           routerLinkActive="active-link"
           (click)="updateNavbarClass('/sobremi')"
-        ><i class="fi fi-rr-message-code navicon"></i>Contactar
+          ><i class="fi fi-rr-message-code navicon"></i>Contactar
         </a>
       </li>
     </ul>
   </nav>
-
 </header>
 }
