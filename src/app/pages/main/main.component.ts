@@ -6,9 +6,13 @@ import { AboutmeComponent } from "../aboutme/aboutme.component";
 import { WorksComponent } from "../works/works.component";
 import { ProjectsComponent } from "../projects/projects.component";
 
+
+
+
+
 @Component({
   selector: 'app-main',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent, AboutmeComponent, WorksComponent, ProjectsComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })

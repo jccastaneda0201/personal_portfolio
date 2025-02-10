@@ -1,6 +1,6 @@
 export default interface Laboral {
     id: number,
-    titulo: String,
+    tituloPuesto: String,
     empresa: String,
     ubicacion: String,
     fechaInicio: Date,

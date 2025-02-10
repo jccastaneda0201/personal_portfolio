@@ -13,12 +13,11 @@ export const routes: Routes = [
         path: '',
         component: MainComponent,
         children: [
-            { path: '', component: HomeComponent },
-            { path: 'sobremi', component: AboutmeComponent },
-            { path: 'trabajos', component: WorksComponent },
-            { path: 'projectos', component: ProjectsComponent },
-            { path: 'contacto', component: ContactComponent }
+            { path: 'home', component: HomeComponent },
+            { path: 'about', component: AboutmeComponent },
+            { path: 'resume', component: WorksComponent },
+            { path: 'portfolio', component: ProjectsComponent },
+            { path: 'contact', component: ContactComponent }
         ],
     },
-
 ];

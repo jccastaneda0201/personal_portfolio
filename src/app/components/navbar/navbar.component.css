@@ -8,3 +8,333 @@
     margin-left: 1.5px;
   }
 }
+
+/* .container {
+  position: absolute;
+  background: transparent;
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  left: 2px;
+} */
+/* 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.logo-wrap,
+svg,
+.border,
+.letter {
+  transition: all 666ms ease-in-out;
+}
+
+.logo-wrap {
+  margin: 75px auto;
+  width: 167px;
+  box-shadow: 0 0 14px 1px #00bfe7;
+  box-shadow: inset 0 0 14px 1px #00bfe7, inset 0 0 0 21px #149ddd;
+  transition-delay: 666ms;
+  opacity: 0;
+  transform: scale(0.6);
+  animation: fadeIn ease-in 0s;
+  animation-fill-mode: both;
+  animation-duration: 1.75s;
+  animation-delay: 0;
+}
+.logo-wrap .tagline {
+  width: 680px;
+  margin-left: -255.51px;
+  position: absolute;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(208, 196, 179, 0.16);
+  transition: all 666ms ease-in-out 222ms;
+}
+.logo-wrap .tagline .filler {
+  opacity: 0;
+  transition: opacity 266.4ms ease-in-out;
+}
+.logo-wrap:hover .tagline {
+  width: 680px;
+  margin-left: 0px;
+  color: rgba(208, 196, 179, 0.8);
+  transition: all 666ms ease-in-out 0;
+}
+.logo-wrap:hover .tagline .filler {
+  opacity: 1;
+  transition: opacity 666ms ease-in-out;
+}
+.logo-wrap svg .border {
+  fill: #d0c4b3;
+  opacity: 0.16;
+}
+.logo-wrap svg .letter {
+  fill: #d0c4b3;
+  opacity: 0.16;
+  transition-delay: 0s;
+}
+.logo-wrap svg .letter.j,
+.logo-wrap svg .letter.u,
+.logo-wrap svg .letter.a,
+.logo-wrap svg .letter.n-2,
+.logo-wrap svg .letter.c,
+.logo-wrap svg .letter.a-2,
+.logo-wrap svg .letter.s,
+.logo-wrap svg .letter.t,
+.logo-wrap svg .letter.a-3,
+.logo-wrap svg .letter.n-3,
+.logo-wrap svg .letter.e,
+.logo-wrap svg .letter.d,
+.logo-wrap svg .letter.a-4 {
+  opacity: 0;
+}
+.logo-wrap:hover {
+  width: 700px;
+  margin-left: -150px;
+  transition-delay: 0;
+  box-shadow: 0 0 14px 1px #00bfe7;
+}
+.logo-wrap:hover:after {
+  content: "";
+  opacity: 0.2;
+  top: 9px;
+  left: 9px;
+  bottom: 9px;
+  right: 9px;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+.logo-wrap:hover svg .border {
+  opacity: 0.8;
+}
+.logo-wrap:hover svg .letter {
+  opacity: 0.8;
+  transition-delay: 666ms;
+}
+
+.logo-wrap:hover svg .letter.j,
+.logo-wrap:hover svg .letter.u,
+.logo-wrap:hover svg .letter.a,
+.logo-wrap:hover svg .letter.n-2,
+.logo-wrap:hover svg .letter.c,
+.logo-wrap:hover svg .letter.a-2,
+.logo-wrap:hover svg .letter.s,
+.logo-wrap:hover svg .letter.t,
+.logo-wrap:hover svg .letter.a-3,
+.logo-wrap:hover svg .letter.n-3,
+.logo-wrap:hover svg .letter.e,
+.logo-wrap:hover svg .letter.d,
+.logo-wrap:hover svg .letter.a-4 {
+  opacity: 0.8;
+}
+.logo-wrap:hover svg .letter.n {
+  opacity: 0;
+  transition-delay: 6ms;
+}
+.logo-wrap:hover svg .letter.j {
+  transition-delay: 732.6ms;
+}
+.logo-wrap:hover svg .letter.u {
+  transition-delay: 799.2ms;
+}
+.logo-wrap:hover svg .letter.a {
+  transition-delay: 865.8ms;
+}
+.logo-wrap:hover svg .letter.n-2 {
+  transition-delay: 932.4ms;
+}
+.logo-wrap:hover svg .letter.c {
+  transition-delay: 999ms;
+}
+.logo-wrap:hover svg .letter.a-2 {
+  transition-delay: 1065.6ms;
+}
+.logo-wrap:hover svg .letter.s {
+  transition-delay: 1132.2ms;
+}
+.logo-wrap:hover svg .letter.t {
+  transition-delay: 1198.8ms;
+}
+.logo-wrap:hover svg .letter.a-3 {
+  transition-delay: 1265.4ms;
+}
+.logo-wrap:hover svg .letter.n-3 {
+  transition-delay: 1332ms;
+}
+.logo-wrap:hover svg .letter.e {
+  transition-delay: 1398.6ms;
+}
+.logo-wrap:hover svg .letter.d {
+  transition-delay: 1465.2ms;
+}
+.logo-wrap:hover svg .letter.a-4 {
+  transition-delay: 1531.8ms;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos base */
+.logo-wrap,
+svg,
+.border,
+.letter {
+  transition: all 666ms ease-in-out;
+}
+
+.logo-wrap {
+  margin: 75px auto;
+  width: 160px; /* Tamaño inicial */
+  box-shadow: 0 0 14px 1px #00bfe7;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0.6);
+  animation: fadeIn 1.75s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Hover general */
+.logo-wrap:hover {
+  width: 167px; /* Tamaño al hacer hover */
+  box-shadow: 0 0 14px 1px #00bfe7;
+  position: relative;
+  /* transform: scale(0.7); */
+  transform: scaleX(0.9);
+  transition: transform 1s ease-in-out;
+}
+
+/* Efecto de sombra adicional al hacer hover */
+.logo-wrap:hover:after {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  bottom: 9px;
+  right: 9px;
+  z-index: -1;
+  background-size: cover;
+  opacity: 0.2;
+  transition: opacity 666ms ease-in-out;
+}
+
+/* Restauración de estilos al quitar hover */
+.logo-wrap:not(:hover):after {
+  opacity: 0; /* Oculta la sombra al quitar hover */
+}
+
+/* Estilos específicos para elementos internos */
+.logo-wrap svg {
+  width: 300px;
+  height: 152px;
+}
+
+.logo-wrap svg .border,
+.logo-wrap svg .letter {
+  fill: #d0c4b3;
+  opacity: 0.16;
+}
+
+/* Cambios al hacer hover */
+.logo-wrap:hover svg .border,
+.logo-wrap:hover svg .letter {
+  opacity: 0.8;
+  transition-delay: 666ms;
+}
+
+/* Animación de letras individuales */
+.logo-wrap svg .letter {
+  opacity: 0;
+}
+
+/* Mostrar letras al hacer hover */
+.logo-wrap:hover svg .letter {
+  opacity: 0.8;
+}
+
+/* Delays dinámicos para letras */
+.logo-wrap:hover svg .letter.j {
+  transition-delay: 732.6ms;
+}
+.logo-wrap:hover svg .letter.u {
+  transition-delay: 799.2ms;
+}
+.logo-wrap:hover svg .letter.a {
+  transition-delay: 865.8ms;
+}
+.logo-wrap:hover svg .letter.n-2 {
+  transition-delay: 932.4ms;
+}
+.logo-wrap:hover svg .letter.c {
+  transition-delay: 999ms;
+}
+.logo-wrap:hover svg .letter.a-2 {
+  transition-delay: 1065.6ms;
+}
+.logo-wrap:hover svg .letter.s {
+  transition-delay: 1132.2ms;
+}
+.logo-wrap:hover svg .letter.t {
+  transition-delay: 1198.8ms;
+}
+.logo-wrap:hover svg .letter.a-3 {
+  transition-delay: 1265.4ms;
+}
+.logo-wrap:hover svg .letter.n-3 {
+  transition-delay: 1332ms;
+}
+.logo-wrap:hover svg .letter.e {
+  transition-delay: 1398.6ms;
+}
+.logo-wrap:hover svg .letter.d {
+  transition-delay: 1465.2ms;
+}
+.logo-wrap:hover svg .letter.a-4 {
+  transition-delay: 1531.8ms;
+}
+
+/* Tagline */
+.logo-wrap .tagline {
+  width: 680px;
+  position: absolute;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(208, 196, 179, 0.16);
+}
+
+.logo-wrap .tagline .filler {
+  opacity: 0;
+  transition: opacity 266.4ms ease-in-out;
+}
+
+/* Cambios al hacer hover en el tagline */
+.logo-wrap:hover .tagline {
+  width: 680px;
+  margin-left: 0px;
+  color: rgba(208, 196, 179, 0.8);
+  transition: all 666ms ease-in-out 0;
+}
+
+.logo-wrap:hover .tagline .filler {
+  opacity: 1;
+  transition: opacity 666ms ease-in-out;
+}

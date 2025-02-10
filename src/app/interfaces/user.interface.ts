@@ -1,18 +1,20 @@
 export default interface User {
     id: number,
-    //contacto
+    //Datos personales
     nombre: String,
     apellido: String,
     fechaNacimiento: Date,
-    trabajoActual: String,
     //About me
+    trabajoActual: String,
     aboutme: String,
-    intereses: String,
+    skills: String,
+    idiomas: String,
     //redes sociales
     facebook: String,
     twitter: String,
     instagram: String,
     linkedin: String,
     github: String,
-    websiteURL: String
+    websiteURL: String,
+
 }

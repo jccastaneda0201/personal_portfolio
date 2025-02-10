@@ -2,14 +2,33 @@
 <header id="header" class="header dark-background d-flex flex-column">
   <i class="header-toggle d-xl-none bi bi-list"></i>
 
-  <div class="profile-img">
+  <!-- <div class="profile-img">
     <img src="images/profileJc.jpg" alt="" class="img-fluid rounded-circle" />
+  </div> -->
+  <div class="container">
+    <div class="logo-wrap">
+      <svg width="679px" height="152px" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <text class="letter n" x="20" y="100" font-size="40" fill="#d0c4b3">Ñ</text>
+          <text class="letter j" x="10" y="100" font-size="48" fill="#d0c4b3">J</text>
+          <text class="letter u" x="50" y="100" font-size="48" fill="#d0c4b3">U</text>
+          <text class="letter a" x="90" y="100" font-size="48" fill="#d0c4b3">A</text>
+          <text class="letter n-2" x="130" y="100" font-size="48" fill="#d0c4b3">N</text>
+          <text class="letter c" x="200" y="100" font-size="48" fill="#d0c4b3">C</text>
+          <text class="letter a-2" x="240" y="100" font-size="48" fill="#d0c4b3">A</text>
+          <text class="letter s" x="280" y="100" font-size="48" fill="#d0c4b3">S</text>
+          <text class="letter t" x="320" y="100" font-size="48" fill="#d0c4b3">T</text>
+          <text class="letter a-3" x="360" y="100" font-size="48" fill="#d0c4b3">A</text>
+          <text class="letter n-3" x="400" y="100" font-size="48" fill="#d0c4b3">Ñ</text>
+          <text class="letter e" x="440" y="100" font-size="48" fill="#d0c4b3">E</text>
+          <text class="letter d" x="480" y="100" font-size="48" fill="#d0c4b3">D</text>
+          <text class="letter a-4" x="520" y="100" font-size="48" fill="#d0c4b3">A</text>
+        </g>
+      </svg>
+    </div>
   </div>
 
-  <a
-    [routerLink]="['/']"
-    class="logo d-flex align-items-center justify-content-center"
-  >
+  <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
     <!-- Uncomment the line below if you also wish to use an image logo -->
     <!-- <img src="assets/img/logo.png" alt=""> -->
     <h2 class="sitename">{{ perfil.nombre }}</h2>
@@ -17,58 +36,39 @@
 
   <div class="social-links text-center">
     <a href="{{ perfil.linkedin }}" target="_blank" class="linkedin">
-      <i class="fi fi-brands-linkedin"></i
-    ></a>
+      <i class="fi fi-brands-linkedin"></i></a>
     <a href="{{ perfil.github }}" target="_blank" class="github">
-      <i class="fi fi-brands-github"></i
-    ></a>
+      <i class="fi fi-brands-github"></i></a>
     <a href="{{ perfil.instagram }}" class="instagram">
-      <i class="fi fi-brands-instagram"></i
-    ></a>
+      <i class="fi fi-brands-instagram"></i></a>
     <a href="{{ perfil.websiteURL }}" class="personal-website">
-      <i class="fi fi-rr-site-alt"></i
-    ></a>
+      <i class="fi fi-rr-site-alt"></i></a>
   </div>
   <nav id="navmenu" class="navmenu">
     <ul>
       <li>
-        <a
-          [routerLink]="['/']"
-          routerLinkActive="active-link"
-          (click)="updateNavbarClass('/')"
-          ><i class="fi fi-rr-house-chimney navicon"></i>Home
+        <a [routerLink]="['/home']" routerLinkActive="active-link" (click)="updateNavbarClass('/')"><i
+            class="fi fi-rr-house-chimney navicon"></i>Home
         </a>
       </li>
       <li>
-        <a
-          [routerLink]="['/sobremi']"
-          routerLinkActive="active-link"
-          (click)="updateNavbarClass('/sobremi')"
-          ><i class="fi fi-rr-user navicon"></i>Sobre mí
+        <a [routerLink]="['/about']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
+            class="fi fi-rr-user navicon"></i>Sobre mí
         </a>
       </li>
       <li>
-        <a
-          [routerLink]="['/trabajos']"
-          routerLinkActive="active-link"
-          (click)="updateNavbarClass('/sobremi')"
-          ><i class="fi fi-rr-career-growth navicon"></i>Educacion & Trabajo
+        <a [routerLink]="['/resume']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
+            class="fi fi-rr-career-growth navicon"></i>Resumen
         </a>
       </li>
       <li>
-        <a
-          [routerLink]="['/trabajos']"
-          routerLinkActive="active-link"
-          (click)="updateNavbarClass('/sobremi')"
-          ><i class="fi fi-rr-code-branch navicon"></i>Portafolio
+        <a [routerLink]="['/portfolio']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
+            class="fi fi-rr-code-branch navicon"></i>Portafolio
         </a>
       </li>
       <li>
-        <a
-          [routerLink]="['/contacto']"
-          routerLinkActive="active-link"
-          (click)="updateNavbarClass('/sobremi')"
-          ><i class="fi fi-rr-message-code navicon"></i>Contactar
+        <a [routerLink]="['/contact']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
+            class="fi fi-rr-message-code navicon"></i>Contactar
         </a>
       </li>
     </ul>

@@ -1,10 +1,10 @@
 export default interface Education {
+    id: number,
     institucion: String,
-    titulo: String,
-    fechaInicio: String,
+    tituloObtenido: String,
+    fechaInicio: Date,
     fechaFin: Date,
-    descripcion: String,
-    skillTitle: String,
-    skillDescription: String,
-    tecnologias: String
+    actual: Boolean,
+    logros: String,
+    tecnologias: String,
 }

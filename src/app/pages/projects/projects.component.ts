@@ -9,6 +9,7 @@ import Project from '../../interfaces/project.interface';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+
   ProjectsService = inject(ProjectsService)
   projects: Project[] = []
 

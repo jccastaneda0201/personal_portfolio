@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import User from '../../interfaces/user.interface';
 
@@ -23,11 +23,6 @@ export class NavbarComponent {
       console.error('Error:', error);
     }
   }
-
-
-
-
-
 
   isSobreMiActive: boolean = false;
 

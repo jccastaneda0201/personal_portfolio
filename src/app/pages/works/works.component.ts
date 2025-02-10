@@ -1,17 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {
-  faGithub
-} from '@fortawesome/free-brands-svg-icons';
 import { LaboralService } from '../../services/laboral.service';
 import Laboral from '../../interfaces/laboral.interface';
 import { ProjectsService } from '../../services/projects.service';
 import Project from '../../interfaces/project.interface';
 import { DatePipe } from '@angular/common';
+import { EducationService } from '../../services/education.service';
+import Education from '../../interfaces/education.interface';
 
 @Component({
   selector: 'app-works',
-  imports: [FontAwesomeModule, DatePipe],
+  imports: [DatePipe],
   templateUrl: './works.component.html',
   styleUrl: './works.component.css'
 })
@@ -23,14 +21,31 @@ export class WorksComponent {
   LaboralService = inject(LaboralService)
   laboral: Laboral[] = []
 
+  EducationService = inject(EducationService)
+  education: Education[] = []
+
   habilidadesObjetos: any[] = [];
   descripcionObj: any[] = [];
 
+
   async ngOnInit() {
     try {
-      this.projects = await this.ProjectsService.getAllProjects()
-      this.laboral = await this.LaboralService.getAllLaboral()
-      this.extraerHabilidades();
+      this.projects = await this.ProjectsService.getAllProjects();
+
+      const dataEdu = await this.EducationService.getAllEducation();
+      this.education = dataEdu.sort((a, b) => {
+        if (a.actual && !b.actual) return -1;
+        if (!a.actual && b.actual) return 1;
+        return new Date(b.fechaFin || 0).getTime() - new Date(a.fechaFin || 0).getTime();
+      });
+
+      const data = await this.LaboralService.getAllLaboral();
+      this.laboral = data.sort((a, b) => {
+        if (a.actual && !b.actual) return -1;
+        if (!a.actual && b.actual) return 1;
+        return new Date(b.fechaFin || 0).getTime() - new Date(a.fechaFin || 0).getTime();
+      });
+
       console.log(this.laboral);
     } catch (error) {
       console.error('Error:', error);
@@ -68,27 +83,6 @@ export class WorksComponent {
     });
     console.log('Funciones como objetos (sin duplicados):', this.descripcionObj);
   }
-  getActualStatus(actual: boolean): string {
-    return actual ? 'Actual' : 'Finalizado'
-  }
-  constructor(library: FaIconLibrary) {
-    // Add an icon to the library for convenient access in other components
-    library.addIcons(
-      faGithub
-    );
-  }
-  getByFunciones(id: number): string {
-    //por cada objeto encontrado incrementa en 1
-    let count = 0;
-    //recorre el array de laboral
-    this.laboral.forEach((item) => {
-      //si el id coincide incrementa en 1
-      if (item.id === id) {
-        count++;
-      }
-    });
-    //retorna el numero de veces que se repite el id
-    return count.toString();
 
-  }
+
 }
