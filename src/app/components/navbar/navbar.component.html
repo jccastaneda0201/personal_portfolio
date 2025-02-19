@@ -1,11 +1,12 @@
 @for (perfil of usuario; track $index) {
 <header id="header" class="header dark-background d-flex flex-column">
-  <i class="header-toggle d-xl-none bi bi-list"></i>
+  <i class="header-toggle d-xl-none bi fi fi-rr-menu-burger
+  "></i>
 
-  <!-- <div class="profile-img">
-    <img src="images/profileJc.jpg" alt="" class="img-fluid rounded-circle" />
-  </div> -->
-  <div class="container">
+  <div class="profile-img">
+    <img src="images/profileImg.png" alt="" class="img-fluid rounded-circle" />
+  </div>
+  <!-- <div class="container">
     <div class="logo-wrap">
       <svg width="679px" height="152px" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
         <g>
@@ -26,7 +27,7 @@
         </g>
       </svg>
     </div>
-  </div>
+  </div> -->
 
   <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
     <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -47,31 +48,32 @@
   <nav id="navmenu" class="navmenu">
     <ul>
       <li>
-        <a [routerLink]="['/home']" routerLinkActive="active-link" (click)="updateNavbarClass('/')"><i
-            class="fi fi-rr-house-chimney navicon"></i>Home
+        <a [routerLink]="['/']" (click)="scrollToSection('home')" routerLinkActive="active-link">
+          <i class="fi fi-rr-house-chimney navicon"></i> Home
         </a>
       </li>
       <li>
-        <a [routerLink]="['/about']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
-            class="fi fi-rr-user navicon"></i>Sobre mí
+        <a [routerLink]="['/']" (click)="scrollToSection('about')" routerLinkActive="active-link">
+          <i class="fi fi-rr-user navicon"></i> Sobre mí
         </a>
       </li>
       <li>
-        <a [routerLink]="['/resume']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
-            class="fi fi-rr-career-growth navicon"></i>Resumen
+        <a [routerLink]="['/']" (click)="scrollToSection('resume')" routerLinkActive="active-link">
+          <i class="fi fi-rr-career-growth navicon"></i> Resumen
         </a>
       </li>
       <li>
-        <a [routerLink]="['/portfolio']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
-            class="fi fi-rr-code-branch navicon"></i>Portafolio
+        <a [routerLink]="['/']" (click)="scrollToSection('portfolio')" routerLinkActive="active-link">
+          <i class="fi fi-rr-code-branch navicon"></i> Portafolio
         </a>
       </li>
       <li>
-        <a [routerLink]="['/contact']" routerLinkActive="active-link" (click)="updateNavbarClass('/sobremi')"><i
-            class="fi fi-rr-message-code navicon"></i>Contactar
+        <a [routerLink]="['/']" (click)="scrollToSection('contact')" routerLinkActive="active-link">
+          <i class="fi fi-rr-message-code navicon"></i> Contactar
         </a>
       </li>
     </ul>
   </nav>
+
 </header>
 }

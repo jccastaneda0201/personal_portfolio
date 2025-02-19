@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import User from '../../interfaces/user.interface';
 
@@ -13,10 +13,15 @@ export class NavbarComponent {
 
   userService = inject(UsersService)
   usuario: User[] = []
+  router = inject(Router)
 
   async ngOnInit() {
     try {
       this.usuario = await this.userService.getAllUsers()
+      window.onload = () => {
+        console.log("✅ Toda la página (incluyendo imágenes) ha sido cargada!");
+        this.scrollToSection(window.location.pathname.replace('/', ''));
+      };
       console.log(this.usuario);
     }
     catch (error) {
@@ -39,4 +44,19 @@ export class NavbarComponent {
         break;
     }
   }
+
+
+  scrollToSection(sectionId: string) {
+    if (!sectionId) return;
+
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  }
+
+
+
 }

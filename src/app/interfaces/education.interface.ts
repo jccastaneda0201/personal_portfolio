@@ -8,3 +8,8 @@ export default interface Education {
     logros: String,
     tecnologias: String,
 }
+
+export interface FtEducation {
+    icon: string;
+    label: string;
+}

@@ -1,12 +1,13 @@
 export default interface Laboral {
-    id: number,
-    tituloPuesto: String,
-    empresa: String,
-    ubicacion: String,
+    id?: number,
+    tituloPuesto: string,
+    empresa: string,
+    ubicacion: string,
     fechaInicio: Date,
     fechaFin: Date,
     actual: boolean,
-    descripcion: String,
-    funciones: String,
-    habilidades: String
+    descripcion: string,
+    funciones: string,
+    habilidades: string[],
+    skillsConIcono?: { skill: string; icon: string }[]; // Nuevo campo 
 }

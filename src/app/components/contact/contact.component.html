@@ -1,0 +1,85 @@
+<section id="contact" class="contact section">
+  <img src='images/contact-bg.svg' alt="contacto" class="contact-img">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contacto</h2>
+    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+  </div><!-- End Section Title -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+        <div class="contact__widget__item">
+          <div class="contact__widget__item__icon">
+            <i class="fi fi-ss-land-location"></i>
+          </div>
+          <div class="contact__widget__item__text">
+            <h4>Address</h4>
+            <p>Barcelona</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+        <div class="contact__widget__item">
+          <div class="contact__widget__item__icon">
+            <i class="fa fa-phone"></i>
+          </div>
+          <div class="contact__widget__item__text">
+            <h4>Hotline</h4>
+            <p>1-677-124-44227 • 1-688-356-66889</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-md-6 col-md-3">
+        <div class="contact__widget__item">
+          <div class="contact__widget__item__icon">
+            <i class="fi fi-br-at"></i>
+          </div>
+          <div class="contact__widget__item__text">
+            <h4>Email</h4>
+            <p>jccastanedacamargo&#64;outlook.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Widget Section End -->
+
+  <!-- Call To Action Section Begin -->
+  <section class="contact spad">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="contact__map">
+
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="contact__form">
+            <h3>Get in touch</h3>
+            <form [formGroup]="formulario" (ngSubmit)="createContacto()">
+              <div>
+                <div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Nombre" />
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" formControlName="email" id="email" placeholder="Email" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" formControlName="asunto" id="asunto" placeholder="Asunto" />
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" formControlName="mensaje" rows="5"
+                      placeholder="Escriba su mensaje"></textarea>
+                  </div>
+                  <button type="submit" class="primary-btn">Enviar mensaje</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Call To Action Section End -->
+</section>

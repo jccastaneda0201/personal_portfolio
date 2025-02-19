@@ -1,3 +1,6 @@
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
 @import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
 /* Fonts */
 :root {
@@ -56,6 +59,7 @@ body {
   color: #ffffff;
   background-color: #040b14;
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -76,7 +80,7 @@ h4,
 h5,
 h6 {
   color: #ffffff;
-  font-family: var(--heading-font);
+  font-family: "Raleway", sans-serif;
 }
 
 /* PHP Email Form Messages
@@ -103,7 +107,7 @@ h6 {
 
 .php-email-form .loading {
   display: none;
-  background: var(--surface-color);
+  background: #151f2b;
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -116,8 +120,8 @@ h6 {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
+  border: 3px solid #149ddd;
+  border-top-color: #151f2b;
   animation: php-email-form-loading 1s linear infinite;
 }
 
@@ -135,8 +139,8 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: #ffffff;
+  background-color: #040b14;
   position: fixed;
   top: 0;
   left: 0;
@@ -146,15 +150,14 @@ h6 {
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
-  border-right: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 1px solid color-mix(in srgb, #ffffff, transparent 90%);
 }
 
 .header .profile-img img {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  border: 8px solid color-mix(in srgb, #ffffff, transparent 85%);
 }
 
 .header .logo {
@@ -171,7 +174,7 @@ h6 {
   font-size: 24px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: #ffffff;
 }
 
 .header .social-links {
@@ -183,8 +186,8 @@ h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  color: var(--default-color);
+  background: color-mix(in srgb, #ffffff, transparent 90%);
+  color: #ffffff;
   margin: 0 2px;
   border-radius: 50%;
   text-align: center;
@@ -194,14 +197,14 @@ h6 {
 }
 
 .header .social-links a:hover {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: #ffffff;
+  background: #149ddd;
 }
 
 @media (min-width: 1200px) {
   .header ~ main,
   .header ~ #footer {
-    margin-left: 300px;
+    margin-left: 310px;
   }
 }
 
@@ -216,8 +219,8 @@ h6 {
 }
 
 .header .header-toggle {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
+  color: #ffffff;
+  background-color: #149ddd;
   font-size: 22px;
   display: flex;
   align-items: center;
@@ -228,14 +231,26 @@ h6 {
   cursor: pointer;
   position: fixed;
   top: 15px;
-  right: 15px;
+  right: 4.5rem;
   z-index: 9999;
   transition: background-color 0.3s;
 }
 
+.bi {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .header .header-toggle:hover {
-  color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+  color: #ffffff;
+  background-color: color-mix(in srgb, #149ddd 90%, white 15%);
 }
 
 /*--------------------------------------------------------------
@@ -289,13 +304,13 @@ h6 {
   border-radius: 50%;
   transition: 0.3s;
   flex-shrink: 0;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  background-color: color-mix(in srgb, #149ddd, transparent 90%);
 }
 
 .navmenu a .toggle-dropdown:hover,
 .navmenu a:focus .toggle-dropdown:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: #149ddd;
+  color: #ffffff;
 }
 
 .navmenu a:hover,
@@ -307,13 +322,13 @@ h6 {
 .navmenu a:hover .navicon,
 .navmenu .active .navicon,
 .navmenu .active:focus .navicon {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 .navmenu .active .toggle-dropdown,
 .navmenu .active:focus .toggle-dropdown {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  background-color: #149ddd;
+  color: #ffffff;
   transform: rotate(180deg);
 }
 
@@ -339,7 +354,7 @@ h6 {
   padding: 5px 10px;
   margin: 5px 10px;
   background-color: var(--nav-dropdown-background-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, #ffffff, transparent 90%);
   box-shadow: none;
   transition: all 0.5s ease-in-out;
 }
@@ -361,7 +376,7 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
+  background: #040b14;
   transition: all 0.6s ease-out;
 }
 
@@ -371,7 +386,7 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-color: #149ddd transparent #149ddd transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -398,7 +413,7 @@ h6 {
   right: 15px;
   bottom: -15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #149ddd;
   width: 44px;
   height: 44px;
   border-radius: 50px;
@@ -407,13 +422,13 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: #ffffff;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background-color: color-mix(in srgb, #149ddd, transparent 20%);
+  color: #ffffff;
 }
 
 .scroll-top.active {
@@ -435,8 +450,8 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  color: var(--default-color);
-  background-color: var(--background-color);
+  color: #ffffff;
+  background-color: #040b14;
   padding: 25px 0;
   position: relative;
 }
@@ -464,7 +479,7 @@ h6 {
   content: "/";
   display: inline-block;
   padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
+  color: color-mix(in srgb, #ffffff, transparent 70%);
 }
 
 /*--------------------------------------------------------------
@@ -493,7 +508,7 @@ h6 {
   display: block;
   width: 50px;
   height: 3px;
-  background: var(--accent-color);
+  background: #149ddd;
   left: 0;
   bottom: 0;
 }
@@ -527,7 +542,7 @@ h6 {
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 70%);
+  background: color-mix(in srgb, #040b14, transparent 70%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -551,7 +566,7 @@ h6 {
 
 .hero p span {
   letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid #149ddd;
 }
 
 .hero .social-links {
@@ -561,14 +576,14 @@ h6 {
 .hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, #ffffff, transparent 50%);
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
 }
 
 .hero .social-links a:hover {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 @media (max-width: 768px) {
@@ -607,7 +622,7 @@ h6 {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: var(--accent-color);
+  color: #149ddd;
   line-height: 0;
 }
 
@@ -620,7 +635,7 @@ h6 {
 }
 
 .stats .stats-item i {
-  color: var(--accent-color);
+  color: #149ddd;
   display: block;
   font-size: 44px;
   float: left;
@@ -628,7 +643,7 @@ h6 {
 }
 
 .stats .stats-item .purecounter {
-  color: var(--heading-color);
+  color: #ffffff;
   font-size: 48px;
   line-height: 40px;
   display: block;
@@ -637,7 +652,7 @@ h6 {
 }
 
 .stats .stats-item p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  color: color-mix(in srgb, #ffffff, transparent 40%);
   padding: 15px 0 0 0;
   margin: 0 0 0 60px;
   font-family: var(--heading-font);
@@ -655,7 +670,7 @@ h6 {
 }
 
 .skills .progress .skill {
-  color: var(--heading-color);
+  color: #ffffff;
   padding: 0;
   margin: 0 0 6px 0;
   text-transform: uppercase;
@@ -670,7 +685,7 @@ h6 {
 }
 
 .skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  background: color-mix(in srgb, #ffffff, transparent 90%);
   height: 10px;
 }
 
@@ -678,7 +693,7 @@ h6 {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: var(--accent-color);
+  background-color: #149ddd;
 }
 
 /*--------------------------------------------------------------
@@ -706,7 +721,7 @@ h6 {
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -749,7 +764,7 @@ h6 {
   font-weight: 400;
   color: #ffffff;
   display: inline-block;
-  background-color: var(--accent-color);
+  background-color: #149ddd;
 }
 
 .portfolio .portfolio-content .portfolio-info p {
@@ -777,7 +792,7 @@ h6 {
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
 .portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 .portfolio .portfolio-content .portfolio-info .details-link {
@@ -802,7 +817,7 @@ h6 {
 }
 
 .services .service-item .icon {
-  background: var(--accent-color);
+  background: #149ddd;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -810,22 +825,22 @@ h6 {
   height: 54px;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid var(--accent-color);
+  border: 1px solid #149ddd;
   margin-right: 20px;
 }
 
 .services .service-item .icon i {
-  color: var(--contrast-color);
+  color: #ffffff;
   font-size: 24px;
   line-height: 0;
 }
 
 .services .service-item:hover .icon {
-  background: var(--surface-color);
+  background: #151f2b;
 }
 
 .services .service-item:hover .icon i {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 .services .service-item .title {
@@ -835,11 +850,11 @@ h6 {
 }
 
 .services .service-item .title a {
-  color: var(--heading-color);
+  color: #ffffff;
 }
 
 .services .service-item .title a:hover {
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 .services .service-item .description {
@@ -875,13 +890,13 @@ h6 {
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, #ffffff, transparent 20%);
   margin: 0;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 40%);
+  color: color-mix(in srgb, #149ddd, transparent 40%);
   font-size: 26px;
   line-height: 0;
 }
@@ -904,7 +919,7 @@ h6 {
   font-style: italic;
   margin: 0 15px 15px 15px;
   padding: 20px;
-  background-color: var(--surface-color);
+  background-color: #151f2b;
   position: relative;
   margin-bottom: 35px;
   border-radius: 6px;
@@ -915,7 +930,7 @@ h6 {
   content: "";
   width: 0;
   height: 0;
-  border-top: 20px solid var(--surface-color);
+  border-top: 20px solid #151f2b;
   border-right: 20px solid transparent;
   border-left: 20px solid transparent;
   position: absolute;
@@ -935,13 +950,13 @@ h6 {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--background-color);
+  background-color: #040b14;
   opacity: 1;
-  border: 1px solid var(--accent-color);
+  border: 1px solid #149ddd;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: #149ddd;
 }
 
 /*--------------------------------------------------------------
@@ -962,7 +977,7 @@ h6 {
   .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: color-mix(in srgb, #ffffff, transparent 85%);
   opacity: 1;
 }
 
@@ -970,7 +985,7 @@ h6 {
   .portfolio-details-slider
   .swiper-pagination
   .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
+  background-color: #149ddd;
 }
 
 .portfolio-details .portfolio-info {
@@ -983,8 +998,7 @@ h6 {
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, #ffffff, transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -1009,7 +1023,7 @@ h6 {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, #ffffff, transparent 30%);
 }
 
 /*--------------------------------------------------------------
@@ -1017,7 +1031,7 @@ h6 {
 --------------------------------------------------------------*/
 .service-details .services-list {
   padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border: 1px solid color-mix(in srgb, #ffffff, transparent 90%);
   margin-bottom: 20px;
 }
 
@@ -1025,21 +1039,20 @@ h6 {
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid
-    color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid color-mix(in srgb, #ffffff, transparent 70%);
   margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, #ffffff, transparent 20%);
   transition: 0.3s;
 }
 
 .service-details .services-list a.active {
-  color: var(--heading-color);
+  color: #ffffff;
   font-weight: 700;
-  border-color: var(--accent-color);
+  border-color: #149ddd;
 }
 
 .service-details .services-list a:hover {
-  border-color: var(--accent-color);
+  border-color: #149ddd;
 }
 
 .service-details .services-img {
@@ -1075,7 +1088,7 @@ h6 {
 .service-details ul i {
   font-size: 20px;
   margin-right: 8px;
-  color: var(--accent-color);
+  color: #149ddd;
 }
 
 /*--------------------------------------------------------------

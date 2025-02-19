@@ -1,0 +1,38 @@
+<div class="background">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<section id="home" class="hero section dark-background">
+  <!-- <img src="images/space.jpg" alt="" data-aos="fade-in" class="" /> -->
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    @for (usuarios of usuario; track $index) {
+    <h2>{{ usuarios.nombre }} {{ usuarios.apellido }}</h2>
+    <p>
+      Soy
+      <span class="typed" data-typed-items="Designer, Developer, Freelancer">{{
+        usuarios.trabajoActual
+        }}</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
+        class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+    </p>
+    }
+  </div>
+</section>
