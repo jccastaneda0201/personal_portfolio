@@ -1,114 +1,94 @@
-<!-- Resume Section -->
-<section id="resume" class="resume section">
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Resume</h2>
-    <p>
-      En esta sección encontrarás información sobre mi experiencia laboral y los
-      proyectos en los que he trabajado.
-    </p>
-  </div>
-  <!-- End Section Title -->
-
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="resume-title">Education</h3>
-        @for (formacion of education; track formacion.id) {
-        <div class="resume-item">
-          <h4 class="title">{{formacion.institucion}}</h4>
-          <div class="details">
+<div class="container">
+  <!-- Resume Section -->
+  <section id="resume" class="resume section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Resume</h2>
+    </div>
+    <!-- End Section Title -->
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="resume-title">Formación <i class="fi fi-rs-diploma"></i></h3>
+          @for (formacion of education; track formacion.id) {
+          <div class="resume-item">
+            <h4 class="title">{{formacion.institucion}}</h4>
             <p><em>{{formacion.tituloObtenido}}</em></p>
-            <h5> {{ formacion.fechaInicio | date : "MMMM/yyyy" }} -
-              {{
-              formacion.actual ? "Actualidad" : (formacion.fechaFin | date : "MM/yyyy")
-              }}
-            </h5>
-            <ul>
-              <li>
-                @for (aprendizaje of formacion.logros; track $index) {
-              <li>
-                {{ aprendizaje }}
-              </li>
-              }
-              </li>
+            <p><em> {{ formacion.fechaInicio | date : "MMMM/yyyy" }} -
+                {{
+                formacion.actual ? "Actualidad" : (formacion.fechaFin | date : "MM/yyyy")
+                }}
+              </em></p>
+            <div class="details">
+              <ul class="logros__list">
+                <li class="logros__list--item">
+                  @for (aprendizaje of formacion.logros; track $index) {
+                <li>
+                  {{ aprendizaje }}
+                </li>
+                }
+                </li>
 
-            </ul>
-            <ul class="ij-OfferCardContent-description-list">
-              @for (tecnologias of formacion.tecnologias; track $index) {
-              <li class="ij-OfferCardContent-description-list-item">{{ tecnologias }}</li>
-              }
-            </ul>
+              </ul>
+              <ul class="tools__list">
+                @for (tecnologias of formacion.tecnologias; track $index) {
+                <li class="tools__list--item">{{ tecnologias }}</li>
+                }
+              </ul>
+            </div>
           </div>
+          }
+          <!-- Edn Resume Item -->
         </div>
-        }
-        <!-- Edn Resume Item -->
-      </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="resume-title ">Experiencia profesional <i class="fi fi-rr-display-code"></i></h3>
+          @for (work of laboral; track work.id ){
+          <div class="resume-item">
+            <h4 class="title">{{ work.empresa }}</h4>
 
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="resume-title">Professional Experience</h3>
-        @for (work of laboral; track work.id ){
-        <div class="resume-item">
-          <h4 class="title">{{ work.empresa }}</h4>
-          <div class="details">
             <p>
               <em>{{ work.tituloPuesto }}</em>
             </p>
+            <p>
+              <em>{{ work.fechaInicio | date : "dd/MM/yyyy" }} -
+                {{
+                work.actual ? "Actualidad" : (work.fechaFin | date : "dd/MM/yyyy")
+                }}</em>
+            </p>
             <h5>
-              {{ work.fechaInicio | date : "dd/MM/yyyy" }} -
-              {{
-              work.actual ? "Actualidad" : (work.fechaFin | date : "dd/MM/yyyy")
-              }}
+
             </h5>
-            <ul>
-              <li>
-                @for (funcion of work.funciones; track $index) {
-              <li>
-                {{ funcion }}
-              </li>
-              }
-              </li>
-            </ul>
-            <ul class="ij-OfferCardContent-description-list">
-              @for (skills of work.habilidades; track $index) {
-              <li class="ij-OfferCardContent-description-list-item">{{ skills }}
-              </li>
-              }
-            </ul>
-
-            <div class="ij-OfferCardContent-description-list">
-              @for (skill of work.skillsConIcono; track $index) {
-              <span class="ij-OfferCardContent-description-list-item">
-                <img [src]="skill.icon" [alt]="skill.icon" width="20" height="20">
-                {{ skill.skill}}</span>
-              }
-            </div>
-
-            <!-- <div class="ij-OfferCardContent-description-list">
-              @for (habilidad of habilidadesObjetos; track $index) {
-              <span class="ij-OfferCardContent-description-list-item">
-                @if(habilidad ){
-                <img [src]="habilidad.icon" [alt]="habilidad.habilidad" width="20" height="20">
+            <div class="details">
+              <ul>
+                <li>
+                  @for (funcion of work.funciones; track $index) {
+                <li>
+                  {{ funcion }}
+                </li>
                 }
-                {{ habilidad.habilidad }}</span>
-              }
-            </div> -->
+                </li>
+              </ul>
+              <ul class="tools__list">
+                @for (skills of work.habilidades; track $index) {
+                <li class="tools__list--item">{{ skills }}
+                </li>
+                }
+              </ul>
 
-            <!-- <ul class="tech-list">
-              @for (skills of work.habilidades; track $index) {
-              <li class="tech-item">{{ skills }}</li>
-              }
-            </ul> -->
+              <div class="tools__list">
+                @for (skill of work.skillsConIcono; track $index) {
+                <span class="tools__list--item">
+                  <img [src]="skill.icon" [alt]="skill.icon" width="20" height="20">
+                  {{ skill.skill}}</span>
+                }
+              </div>
+            </div>
           </div>
+          }
+          <!-- Edn Resume Item -->
         </div>
-        }
-
-
-
-
-        <!-- Edn Resume Item -->
       </div>
     </div>
-  </div>
-</section>
-<!-- /Resume Section -->
+  </section>
+  <!-- /Resume Section -->
+</div>

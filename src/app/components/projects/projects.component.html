@@ -1,41 +1,41 @@
-<!-- Resume Section -->
-<section id="portfolio" class="resume section">
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Proyectos</h2>
-    <p>
-      En esta sección encontrarás información sobre mi experiencia laboral y los
-      proyectos en los que he trabajado.
-    </p>
-  </div>
+<div class="container">
+  <!-- Resume Section -->
+  <section id="portfolio" class="resume section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Proyectos</h2>
+      <p>
+        En esta sección encontrarás información sobre mi experiencia laboral y los
+        proyectos en los que he trabajado.
+      </p>
 
-  <!-- @for (proyectos of projects ; track proyectos.id ;) {
+      <!-- @for (proyectos of projects ; track proyectos.id ;) {
   <section class="wrapper">
-    <div class="fh5co-about-me">
-      <div class="about-me-inner site-container">
-        <article class="portfolio-wrapper">
-          <div class="portfolio__img">
+    <div class="project__container">
+      <div class="inner__descriptionText site-container">
+        <article class="outer__projectBox">
+          <div class="project__image">
             <img src="images/work02-hover.jpg" class="about-me__profile" alt="about me profile picture">
           </div>
-          <div class="portfolio__bottom">
-            <div class="portfolio__name">
-              <h2 class="universal-h2">{{proyectos.titulo}}</h2>
+          <div class="projectBox--bottom">
+            <div class="project__name">
+              <h2 class="project--title">{{proyectos.titulo}}</h2>
             </div>
-            <div class="tech-list">
+            <div class="tech__list">
               @for (skill of proyectos.tecnologiasConIcono; track $index) {
-              <span class="tech-item">
+              <span class="list--item">
                 <img [src]="skill.icon" [alt]="skill.icon" width="20" height="20">
                 {{ skill.skill}}</span>
               }
             </div>
           </div>
         </article>
-        <div class="about-me__text">
+        <div class="project__description">
           <div class="about-me-slider">
             <div class="about-me-single-slide">
-              <h2 class="universal-h2 universal-h2-bckg">Acerca de este proyecto</h2>
+              <h2 class="project--title project--title-bckg">Acerca de este proyecto</h2>
               <p>{{proyectos.descripcion}}</p>
-              <div class="project-link">
+              <div class="project_link">
                 <a href="https://github.com/Pascual-Eburi/automatricula" target="_blank" rel="noopener noreferrer">
                   <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
                     stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -49,44 +49,40 @@
           </div>
         </div>
       </div>
-      <div class="about-me-bckg" style="background-image: url('images/work02-hover.jpg')"></div>
+      <div class="image__backg" style="background-image: url('images/work02-hover.jpg')"></div>
     </div>
   </section>
   } -->
-
-  <p-carousel [value]="projects" [numVisible]="1" [numScroll]="1" [circular]="true"
-    [responsiveOptions]="responsiveOptions" autoplayInterval="5000">
-
-    <ng-template let-project pTemplate="item">
-      <div class="border border-gray-300 rounded-lg shadow-lg m-2 p-4 text-center">
-        <section class="wrapper">
-          <div class="fh5co-about-me">
-            <div class="about-me-inner site-container">
-              <article class="portfolio-wrapper">
-                <div class="portfolio__img">
-                  <img src="images/work02-hover.jpg" class="about-me__profile" alt="about me profile picture">
-                </div>
-                <div class="portfolio__bottom">
-                  <div class="portfolio__name">
-                    <h2 class="universal-h2">{{project.titulo}}</h2>
+      <div class="carrusel">
+        <p-carousel [value]="projects" [numVisible]="1" [numScroll]="1" [circular]="true"
+          [responsiveOptions]="responsiveOptions" autoplayInterval="10000">
+          <ng-template let-project pTemplate="item">
+            <div class="project__container">
+              <section class="wrapper">
+                <div class="inner__descriptionText site-container">
+                  <div class="outer__projectBox">
+                    <div class="project__image">
+                      <img src="images/work02-hover.jpg" class="about-me__profile" alt="about me profile picture">
+                    </div>
+                    <div class="projectBox--bottom">
+                      <h3 class="project--title">{{ project.titulo }}</h3>
+                      <div class="tech__list">
+                        @for (skill of project.tecnologiasConIcono; track $index) {
+                        <span class="list--item">
+                          <img [src]="skill.icon" [alt]="skill.skill" width="20" height="20">
+                          {{ skill.skill }}
+                        </span>
+                        }
+                      </div>
+                    </div>
                   </div>
-                  <div class="tech-list">
-                    @for (skill of project.tecnologiasConIcono; track $index) {
-                    <span class="tech-item">
-                      <img [src]="skill.icon" [alt]="skill.icon" width="20" height="20">
-                      {{ skill.skill}}</span>
-                    }
-                  </div>
-                </div>
-              </article>
-              <div class="about-me__text">
-                <div class="about-me-slider">
-                  <div class="about-me-single-slide">
-                    <h2 class="universal-h2 universal-h2-bckg">Acerca de este proyecto</h2>
-                    <p>{{project.descripcion}}</p>
-                    <div class="project-link">
-                      <a href="https://github.com/Pascual-Eburi/automatricula" target="_blank"
-                        rel="noopener noreferrer">
+                  <div class="project__description">
+                    <h3>Acerca de este proyecto</h3>
+                    <p>{{ project.descripcion }}</p>
+                    <div class="project_link">
+                      <a href="https://github.com/Pascual-Eburi/automatricula" target="_blank" rel="noopener noreferrer"
+                        class="btn__project">
+                        <span>Ver código</span>
                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
                           stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
                           xmlns="http://www.w3.org/2000/svg">
@@ -98,13 +94,11 @@
                     </div>
                   </div>
                 </div>
-              </div>
+                <div class="image__backg" style="background-image: url('images/work02-hover.jpg')"></div>
+              </section>
             </div>
-            <div class="about-me-bckg" style="background-image: url('images/work02-hover.jpg')"></div>
-          </div>
-          <!-- Flechas de navegación -->
-        </section>
+          </ng-template>
+        </p-carousel>
       </div>
-    </ng-template>
 
-  </p-carousel>
+    </div>

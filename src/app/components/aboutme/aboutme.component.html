@@ -1,124 +1,112 @@
-@for (usuarios of usuario; track $index) {
-<!-- About Section -->
-<section id="about" class="about section">
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Sobre mí</h2>
-    <p></p>
-  </div>
-  <!-- End Section Title -->
+<div class="container">
+  @for (usuarios of usuario; track $index) {
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Sobre mí</h2>
+      <p></p>
+    </div>
+    <!-- End Section Title -->
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row gy-4 justify-content-center">
-      <div class="col-lg-4">
-        <img src="images/profileJc.jpg" class="img-fluid" alt="" />
+    <div class="container profile" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="img__container">
+        <img src="images/profileJc.jpg" class="profile--picture" alt="" />
       </div>
-      <div class="col-lg-8 content">
-        <h2>Web Developer.</h2>
-        <p class="fst-italic py-3">
+      <div class="titleAb text__about">
+        <h2>Desarrollador Web</h2>
+        <p class="fst-italic">
           {{ usuarios.aboutme }}
         </p>
-        <p>{{usuarios.skills}}</p>
       </div>
     </div>
-  </div>
-</section>
-<!-- /About Section -->
+  </section>
+  <!-- /About Section -->
 
-
-
-
-
-<!-- Skills Section -->
-<section id="skills" class="skills section light-background">
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Herramientas y Tecnologías</h2>
-    <p>
-      Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-      consectetur velit
-    </p>
-  </div>
-  <!-- End Section Title -->
-
-  <div class="body">
-    <div class="hexagon-grid">
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/angular-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/react-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/wordpress.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/nodejs-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/typescript.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/mongo-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/mysql-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/css-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <div class="logo-in-main">
-        <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
-          class="hexagon" loading="lazy">
-        <div class="circle">
-          <img src="images/html-img.png" alt="" class="image-435" loading="lazy">
-        </div>
-      </div>
-      <!-- <div class="hexagon see-all">Ver todos 57</div> -->
+  <!-- Skills Section -->
+  <section id="skills" class="skills section light-background">
+    <!-- Section Title -->
+    <div class="titleAb skills__title" data-aos="fade-up">
+      <h3>Herramientas y Tecnologías</h3>
     </div>
-  </div>
-
-
-
-</section>
-<!-- /Skills Section -->
-}
+    <!-- End Section Title -->
+    <div class="hexagon__container">
+      <div class="hexagon__grid">
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/angular-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/react-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/wordpress.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/nodejs-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/typescript.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/mongo-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/mysql-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/css-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <div class="figures--geo">
+          <img src="https://cdn.prod.website-files.com/62d56cdfee83ff60e9a6bb30/62e3a9805bac5201e46dd11d_3.svg" alt=""
+            class="hexagon" loading="lazy">
+          <div class="circle">
+            <img src="images/html-img.png" alt="" class="image--tool" loading="lazy">
+          </div>
+        </div>
+        <!-- <div class="hexagon see-all">Ver todos 57</div> -->
+      </div>
+    </div>
+  </section>
+  <!-- /Skills Section -->
+  }
+</div>

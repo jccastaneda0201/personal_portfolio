@@ -1,14 +1,67 @@
-.container {
-  p {
-    font-size: 40px;
-    font-weight: 400;
-    margin-top: 1rem;
-  }
-}
 @keyframes move {
   100% {
     transform: translate3d(0, 0, 1px) rotate(360deg);
   }
+}
+
+/* 
+  ##Dispositivo = Desktops
+  ##Resolucion = 1281pxo mayorresolusion desktops
+*/
+
+@media (min-width: 1281px) {
+  .hero {
+    h3 {
+      font-size: 3em;
+      margin-bottom: 1em;
+    }
+    h2 {
+      font-size: 5em;
+    }
+
+    p {
+      font-size: 3em;
+    }
+  }
+}
+/* 
+  ##Dispositivo = Laptops, Desktops
+  ##Resolucion = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+/* 
+  ##Dispositivo = Tablets, Ipads (vertical)
+  ##Resolucion = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+  ##Dispositivo = Tablets, Ipads (horizontal)
+  ##Resolucion = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: horizontal) {
+}
+
+/* 
+  ##Dispositivo = Tablets de baja resolucion y telefnos Mobiles (horizontal)
+  ##Resolucion = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+
+/* 
+  ##Dispositivo = Mayoria de telefonos moviles (vertical)
+  ##Resolucion = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
 }
 
 .background {

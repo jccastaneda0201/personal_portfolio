@@ -66,8 +66,8 @@ export class ProjectsComponent {
   responsiveOptions = [
     {
       breakpoint: '1199px',
-      numVisible: 2,
-      numScroll: 2
+      numVisible: 1,
+      numScroll: 1
     },
     {
       breakpoint: '767px',
