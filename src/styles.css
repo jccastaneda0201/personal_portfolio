@@ -328,9 +328,9 @@ h6 {
 --------------------------------------------------------------*/
 .primary-btn {
   display: inline-block;
-  font-size: 15px;
+  font-size: 1.2rem;
   font-family: "Play", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   padding: 14px 32px 12px;
   color: #ffffff;
   text-transform: uppercase;
@@ -344,10 +344,12 @@ h6 {
 .primary-btn:hover:before {
   height: 100%;
   width: 100%;
+  border-radius: 5px;
 }
 .primary-btn:hover:after {
   height: 100%;
   width: 100%;
+  border-radius: 5px;
 }
 .primary-btn:before {
   position: absolute;

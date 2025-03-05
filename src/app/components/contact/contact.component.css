@@ -1,126 +1,207 @@
-.form-control::placeholder {
-  color: #999;
-  opacity: 1;
-  font-size: 1.5rem !important;
-}
-
-ul li {
-  list-style: none;
-}
-
-/*---------------------
-  Contact Widget
------------------------*/
-#contact img {
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-  background-color: #000;
-  opacity: 0.5;
-}
-
-.contact__widget__item {
-  margin-bottom: 30px;
-}
-
-.contact__widget__item__icon {
-  height: 70px;
-  width: 70px;
-  border: 1px solid #00bfe7;
-
-  line-height: 80px;
-  text-align: center;
-  border-radius: 50%;
-  float: left;
-  margin-right: 30px;
-}
-.contact__widget__item__icon i {
-  font-size: 30px;
-  color: #ffffff;
-}
-
-.contact__widget__item__text {
-  overflow: hidden;
-  padding-top: 7px;
-}
-.contact__widget__item__text h4 {
-  font-size: 22px;
-  color: #ffffff;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.contact__widget__item__text p {
-  margin-bottom: 0;
-}
-
-/*---------------------
-  Contact
------------------------*/
-
+/* Estilos base para la sección de contacto */
 .contact {
+  background-color: transparent !important;
+  color: #fff;
+  padding: 4rem 2rem;
+  position: relative;
   overflow: hidden;
-  height: 100vh;
 }
-
-.contact__form {
-  margin-top: 6rem;
-}
-
-.contact__map {
-  height: 450px;
-}
-.contact__map iframe {
+.contact-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  /* filter: blur(10px) brightness(1); */
+  z-index: -1;
 }
 
-.contact__form h3 {
-  color: #ffffff;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 35px;
+.highlighted-text {
+  max-width: 800px;
+  margin: 2rem auto;
+  color: #b0b0b0;
+  line-height: 1.6;
+  font-size: 1.2rem;
 }
-.contact__form form input {
-  height: 50px;
-  width: 100%;
-  border: 1px solid rgba(225, 225, 225, 0.5);
-  box-shadow: 0 0 14px 1px #00bfe7;
+
+/* Contenedor principal del contenido de contacto */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+  /* flex: 1; */
+  background-color: transparent;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-form::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* background: conic-gradient(transparent, transparent, transparent, #91c4d9);
+  animation: rotate 4s linear infinite; */
+  z-index: 1;
+}
+
+.contact-form::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
   background: transparent;
-  font-size: 16px;
-  color: #adadad;
-  padding-left: 20px;
-  font-weight: 300;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  -webkit-transition: all, 0.3s;
-  -o-transition: all, 0.3s;
-  transition: all, 0.3s;
+  border-radius: 11px;
+  z-index: 2;
 }
-.contact__form form input:placeholder {
-  color: #adadad;
+
+.contact-form h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
-.contact__form form input:focus {
-  border-color: #e1e1e1;
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 3;
 }
-.contact__form form textarea {
-  height: 110px;
+
+.form-group input,
+.form-group textarea {
   width: 100%;
-  border: 1px solid rgba(225, 225, 225, 0.5);
-  box-shadow: 0 0 14px 1px #00bfe7;
+  padding: 12px 15px;
   background: transparent;
-  font-size: 16px;
-  color: #adadad;
-  padding-top: 12px;
-  padding-left: 20px;
-  font-weight: 300;
-  margin-bottom: 14px;
-  resize: none;
-  -webkit-transition: all, 0.3s;
-  -o-transition: all, 0.3s;
-  transition: all, 0.3s;
+  border: 2px solid #00bfe7;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
 }
-.contact__form form textarea:placeholder {
-  color: #adadad;
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  border-color: #00ffff;
 }
-.contact__form form textarea:focus {
-  border-color: #e1e1e1;
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos base para el botón */
+
+.primary-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 3;
+
+  -webkit-transition: ease-out 0.7s;
+  -moz-transition: ease-out 0.7s;
+  transition: ease-out 0.7s;
+}
+
+/* Efecto hover en el botón */
+.primary-btn:hover {
+  box-shadow: inset 900px 0 0 rgb(118, 218, 255);
+}
+
+/* Estilos base para el ícono */
+.primary-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease; /* Agregar transición suave */
+}
+
+/* Animación del ícono al hacer hover */
+.primary-btn:hover i {
+  transform: translateX(3rem); /* Desplazar el ícono 1rem hacia la derecha */
+}
+
+/* Estilos para el mapa de contacto (placeholder) */
+.contact-map {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+}
+/* .animation {
+  width: 50%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+} */
+.contact-map::before {
+  content: "Ubicación";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 2rem;
+  z-index: 1;
+}
+
+/* Animación de rotación */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .primary-btn {
+    width: 50%;
+    margin: 4rem 1rem 0 auto;
+  }
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-map {
+    width: 100%;
+  }
 }

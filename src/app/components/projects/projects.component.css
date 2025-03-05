@@ -157,7 +157,10 @@
 
 .outer__projectBox:hover .project--title {
   transform: translateY(-2px);
-  color: #4d21ff;
+  font-size: 1.8rem;
+  transition: all 0.7s ease;
+  color: #1278bf;
+  text-shadow: 0px 0px 9px #508ad3;
 }
 
 /* Lista de tecnologías */
@@ -311,7 +314,7 @@ section:hover .project__description::after {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, #4d21ff, #ff2975, #4d21ff);
+  background: linear-gradient(45deg, #4d21ff, #f20574, #4d21ff);
   z-index: -2;
   /* border-radius: 32px; */
   opacity: 0;
@@ -428,6 +431,10 @@ section:hover .image__backg {
 
   .project__description {
     padding: 1.5rem;
+  }
+
+  .outer__projectBox:hover .project--title {
+    font-size: 1.5rem;
   }
 
   .projectBox--bottom {
