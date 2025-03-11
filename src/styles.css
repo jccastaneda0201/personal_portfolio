@@ -100,60 +100,59 @@ h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 0 15px;
+  padding: 10px 14px;
   width: 300px;
+  height: 100vh;
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, #ffffff, transparent 90%);
-}
 
-.header .profile-img img {
-  margin: 15px auto;
-  display: block;
-  width: 120px;
-  border: 8px solid color-mix(in srgb, #ffffff, transparent 85%);
-}
+  .profile-img img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 8px solid color-mix(in srgb, #ffffff, transparent 85%);
+  }
+  .logo {
+    line-height: 1;
+    margin-bottom: 15px;
 
-.header .logo {
-  line-height: 1;
-  margin-bottom: 15px;
-}
+    img {
+      max-height: 32px;
+      margin-right: 8px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      font-weight: 700;
+      color: #ffffff;
+    }
+  }
 
-.header .logo img {
-  max-height: 32px;
-  margin-right: 8px;
-}
+  .social-links {
+    margin: 0 0 20px 0;
 
-.header .logo h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 700;
-  color: #ffffff;
-}
+    a {
+      font-size: 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: color-mix(in srgb, #ffffff, transparent 90%);
+      color: #ffffff;
+      margin: 0 2px;
+      border-radius: 50%;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      transition: 0.3s;
 
-.header .social-links {
-  margin: 0 0 20px 0;
-}
-
-.header .social-links a {
-  font-size: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: color-mix(in srgb, #ffffff, transparent 90%);
-  color: #ffffff;
-  margin: 0 2px;
-  border-radius: 50%;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  transition: 0.3s;
-}
-
-.header .social-links a:hover {
-  color: #ffffff;
-  background: #149ddd;
+      &:hover {
+        color: #ffffff;
+        background: #149ddd;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -169,11 +168,14 @@ h6 {
   }
 }
 
+@media (max-width: 767px) {
+}
+
 .header.header-show {
   left: 0;
 }
 
-.header .header-toggle {
+/* .header .header-toggle {
   color: #ffffff;
   background-color: #149ddd;
   font-size: 22px;
@@ -189,9 +191,9 @@ h6 {
   right: 2rem;
   z-index: 9999;
   transition: background-color 0.3s;
-}
+} */
 
-.bi {
+.fi {
   display: inline-block;
   font-style: normal;
   font-weight: normal !important;
@@ -230,7 +232,7 @@ h6 {
 .navmenu a:focus {
   color: #a8a9b4;
   padding: 15px 10px;
-  font-family: var(--nav-font);
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
   display: flex;
@@ -322,7 +324,6 @@ h6 {
   display: block;
   background-color: rgba(33, 37, 41, 0.03);
 }
-
 /*--------------------------------------------------------------
 # Button styles 
 --------------------------------------------------------------*/

@@ -22,9 +22,6 @@ export class WorksComponent {
   education: Education[] = []
 
 
-
-
-
   async ngOnInit() {
     try {
 

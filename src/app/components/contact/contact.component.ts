@@ -3,6 +3,8 @@ import { ContactosService } from '../../services/contactos.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+
+
 @Component({
   selector: 'app-contact',
   imports: [ReactiveFormsModule],
@@ -21,19 +23,27 @@ export class ContactComponent {
     mensaje: new FormControl(''),
   })
 
-
-
   async createContacto() {
     try {
       console.log(this.formulario.value);
-      const contacto = await this.contactosService.create(this.formulario.value)
-      this.Toaster.success('Mensaje enviado correctamente', 'Enviado');
-    }
-    catch (error) {
+      const contacto = await this.contactosService.create(this.formulario.value);
+
+      this.Toaster.success('Mensaje enviado correctamente', 'in div', {
+        timeOut: 3000, // Duración del mensaje
+        positionClass: 'toast-bottom-right', // Posición en pantalla
+        progressBar: true, // Barra de progreso
+        easing: 'ease-in-out', // Animación
+        closeButton: true, // Botón de cierre
+      });
+    } catch (error) {
       console.error('Error:', error);
-      this.Toaster.error('Error al enviar el mensaje', 'Error');
+      this.Toaster.error('Error al enviar el mensaje', 'in div', {
+        timeOut: 3000,
+        positionClass: 'toast-bottom-right',
+        progressBar: true,
+        easing: 'ease-in-out',
+        closeButton: true,
+      });
     }
-
-
   }
 }

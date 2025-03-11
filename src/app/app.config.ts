@@ -17,11 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(),
     provideAnimations(),
-    provideToastr({
-      timeOut: 10000,
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-    }),
+    provideToastr(),
     provideAnimationsAsync(),
     providePrimeNG({
       theme: {

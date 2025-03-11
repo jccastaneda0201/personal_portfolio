@@ -10,7 +10,7 @@
       <div class="row mb-4">
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
           <h3 class="resume-title">Formación</h3>
-          @for (formacion of education; track formacion.id) {
+          @for (formacion of education; track $index) {
           <div class="resume-item">
             <h4 class="title">{{formacion.institucion}}</h4>
             <p><em>{{formacion.tituloObtenido}}</em></p>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
           <h3 class="resume-title ">Experiencia profesional</h3>
-          @for (work of laboral; track work.id ){
+          @for (work of laboral; track $index ){
           <div class="resume-item">
             <h4 class="title">{{ work.empresa }}</h4>
 
@@ -74,14 +74,6 @@
                 </li>
                 }
               </ul>
-
-              <div class="tools__list">
-                @for (skill of work.skillsConIcono; track $index) {
-                <span class="tools__list--item">
-                  <img [src]="skill.icon" [alt]="skill.icon" width="20" height="20">
-                  {{ skill.skill}}</span>
-                }
-              </div>
             </div>
           </div>
           }

@@ -1,37 +1,13 @@
 @for (perfil of usuario; track $index) {
-<header id="header" class="header dark-background d-flex flex-column">
+<div id="header" class="header close d-flex flex-column position-relative">
   <i class="header-toggle d-xl-none bi fi fi-rr-menu-burger
-  "></i>
+  " (click)="toggleNavbar()"></i>
 
   <div class="profile-img">
     <img src="images/profileImg.png" alt="" class="img-fluid rounded-circle" />
   </div>
-  <!-- <div class="container">
-    <div class="logo-wrap">
-      <svg width="679px" height="152px" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-        <g>
-          <text class="letter n" x="20" y="100" font-size="40" fill="#d0c4b3">Ñ</text>
-          <text class="letter j" x="10" y="100" font-size="48" fill="#d0c4b3">J</text>
-          <text class="letter u" x="50" y="100" font-size="48" fill="#d0c4b3">U</text>
-          <text class="letter a" x="90" y="100" font-size="48" fill="#d0c4b3">A</text>
-          <text class="letter n-2" x="130" y="100" font-size="48" fill="#d0c4b3">N</text>
-          <text class="letter c" x="200" y="100" font-size="48" fill="#d0c4b3">C</text>
-          <text class="letter a-2" x="240" y="100" font-size="48" fill="#d0c4b3">A</text>
-          <text class="letter s" x="280" y="100" font-size="48" fill="#d0c4b3">S</text>
-          <text class="letter t" x="320" y="100" font-size="48" fill="#d0c4b3">T</text>
-          <text class="letter a-3" x="360" y="100" font-size="48" fill="#d0c4b3">A</text>
-          <text class="letter n-3" x="400" y="100" font-size="48" fill="#d0c4b3">Ñ</text>
-          <text class="letter e" x="440" y="100" font-size="48" fill="#d0c4b3">E</text>
-          <text class="letter d" x="480" y="100" font-size="48" fill="#d0c4b3">D</text>
-          <text class="letter a-4" x="520" y="100" font-size="48" fill="#d0c4b3">A</text>
-        </g>
-      </svg>
-    </div>
-  </div> -->
 
   <a [routerLink]="['/']" class="logo d-flex align-items-center justify-content-center">
-    <!-- Uncomment the line below if you also wish to use an image logo -->
-    <!-- <img src="assets/img/logo.png" alt=""> -->
     <h2 class="sitename">{{ perfil.nombre }}</h2>
   </a>
 
@@ -75,5 +51,5 @@
     </ul>
   </nav>
 
-</header>
+</div>
 }
