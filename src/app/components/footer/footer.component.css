@@ -12,33 +12,6 @@
   }
 }
 
-/* Corazón */
-
-/* .heart {
-  position: relative;
-  width: 100px;
-  height: 90px;
-  animation: 1.5s ease 0s infinite beat;
-}
-.heart:before,
-.heart:after {
-  position: absolute;
-  content: "";
-  left: 50px;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: #fc2e5a;
-  border-radius: 50px 50px 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
-}
-.heart:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
-} */
-
 .heart {
   display: inline-block;
   width: 1em;
@@ -83,7 +56,6 @@
   font-size: 14px; /* Tamaño de fuente pequeño */
   line-height: 1.5; /* Espaciado entre líneas */
   position: relative;
-  left: 15%;
 }
 
 /* Estilo para el nombre del desarrollador */
@@ -119,4 +91,10 @@
   margin-top: 10px;
   font-size: 12px;
   color: #ccc;
+}
+
+@media (min-width: 1400px) {
+  .copyright {
+    left: 15%;
+  }
 }
