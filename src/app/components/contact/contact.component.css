@@ -2,7 +2,7 @@
 .contact {
   background-color: transparent !important;
   color: #fff;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
   position: relative;
   overflow: hidden;
 }
@@ -10,7 +10,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 95%;
   height: 100%;
   object-fit: cover;
   opacity: 0.4;

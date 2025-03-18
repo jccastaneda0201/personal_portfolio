@@ -1,5 +1,7 @@
-<header class="header">
-  <app-navbar></app-navbar>
+<header>
+  <app-navbar [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+    (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)">
+  </app-navbar>
 </header>
 <main id="main" class="main">
   <app-home></app-home>
@@ -7,7 +9,7 @@
   <app-works></app-works>
   <app-projects></app-projects>
   <app-contact></app-contact>
-  <router-outlet></router-outlet>
+  <router-outlet />
 </main>
 <footer class="footer">
   <app-footer></app-footer>

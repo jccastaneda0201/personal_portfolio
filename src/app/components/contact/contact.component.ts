@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ContactosService } from '../../services/contactos.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 
 
@@ -14,7 +14,6 @@ import { ToastrService } from 'ngx-toastr';
 export class ContactComponent {
 
   contactosService = inject(ContactosService)
-  Toaster = inject(ToastrService)
 
   formulario: FormGroup = new FormGroup({
     nombre: new FormControl(''),
@@ -26,24 +25,30 @@ export class ContactComponent {
   async createContacto() {
     try {
       console.log(this.formulario.value);
-      const contacto = await this.contactosService.create(this.formulario.value);
+      await this.contactosService.create(this.formulario.value);
 
-      this.Toaster.success('Mensaje enviado correctamente', 'in div', {
-        timeOut: 3000, // Duración del mensaje
-        positionClass: 'toast-bottom-right', // Posición en pantalla
-        progressBar: true, // Barra de progreso
-        easing: 'ease-in-out', // Animación
-        closeButton: true, // Botón de cierre
+      // Resetear el formulario después del envío exitoso
+      this.formulario.reset();
+
+      // Mostrar alerta de éxito con SweetAlert2
+      Swal.fire({
+        icon: 'success',
+        title: 'Mensaje enviado',
+        text: 'Tu mensaje se ha enviado correctamente.',
+        confirmButtonColor: '#3085d6',
       });
+
     } catch (error) {
       console.error('Error:', error);
-      this.Toaster.error('Error al enviar el mensaje', 'in div', {
-        timeOut: 3000,
-        positionClass: 'toast-bottom-right',
-        progressBar: true,
-        easing: 'ease-in-out',
-        closeButton: true,
+
+      // Mostrar alerta de error con SweetAlert2
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.',
+        confirmButtonColor: '#d33',
       });
     }
   }
 }
+
