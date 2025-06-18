@@ -25,6 +25,7 @@ export class ProjectsComponent {
     { label: "Nodejs", icon: "https://img.icons8.com/fluency/48/node-js.png" },
     { label: "Angular", icon: "https://img.icons8.com/fluency/48/angularjs.png" },
     { label: "React", icon: "https://img.icons8.com/color/48/react-native.png" },
+    { label: "ViteJs", icon: "https://img.icons8.com/fluency/48/vite.png" },
     { label: "MongoDB", icon: "https://img.icons8.com/color/48/mongo-db.png" },
     { label: "MySql", icon: "https://img.icons8.com/color/48/my-sql.png" },
     { label: "typescript", icon: "https://img.icons8.com/fluency/48/typescript--v1.png" },

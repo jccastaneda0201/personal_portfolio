@@ -135,7 +135,7 @@
   left: 0;
   width: 3px;
   height: 40px;
-  background: #ff2975;
+  background: linear-gradient(135deg, #4da6e7, #0e4b8b);
   border-radius: 0 3px 3px 0;
   transform: scaleY(0);
   transform-origin: top;
@@ -153,28 +153,46 @@
   margin-bottom: 1.2rem;
   letter-spacing: 0.5px;
   transform: translateY(0);
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
   text-align: center;
 }
 
 .outer__projectBox:hover .project--title {
-  transform: translateY(-2px);
-  font-size: 1.8rem;
-  transition: all 0.7s ease;
-  color: #1278bf;
-  text-shadow: 0px 0px 9px #508ad3;
+  animation: bounceUpGlow 0.9s ease forwards;
+}
+
+/* 🎯 Nueva animación */
+@keyframes bounceUpGlow {
+  0% {
+    transform: translateY(0) scale(1);
+    color: #ffffff;
+    text-shadow: none;
+  }
+  40% {
+    transform: translateY(-6px) scale(1.05);
+    color: #4da6e7;
+    text-shadow: 0 0 5px #4da6e7;
+  }
+  70% {
+    transform: translateY(2px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1.02);
+    color: #1278bf;
+    text-shadow: 0 0 9px #508ad3;
+  }
 }
 
 /* Lista de tecnologías */
 .tech__list {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center; */
   gap: 0.3rem;
   margin-top: 2rem;
 }
 
 .list--item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.2rem;
@@ -184,15 +202,30 @@
   font-size: 0.8rem;
   color: #b0b0b0;
   transition: all 0.3s ease;
-  border-left: 2px solid transparent;
+  overflow: hidden; /* para que el borde no sobresalga */
+}
+
+.list--item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 .list--item:hover {
   background: #252525;
   color: #ffffff;
   transform: translateY(-3px);
-  border-left: 2px solid #ff2975;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.list--item:hover::before {
+  background: linear-gradient(135deg, #4da6e7, #0e4b8b);
 }
 
 .list--item img {
@@ -231,7 +264,7 @@
   right: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #4d21ff, #ff2975);
+  background: linear-gradient(1300deg, #4da6e7, #0e4b8b);
   transform: translateX(100%);
   transition: transform 0.6s ease;
 }
@@ -252,7 +285,7 @@ section:hover .project__description::after {
   content: "//";
   position: absolute;
   left: -25px;
-  color: #ff2975;
+  color: #0e4b8b;
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
@@ -275,93 +308,89 @@ section:hover .project__description::after {
 }
 
 /* Enlace del proyecto con efecto neón */
-.project_link {
-  margin-left: auto;
+/* Agrupa y centra los botones */
+.project__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
+/* Estilo base para ambos botones */
 .btn__project {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: transparent;
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 30px;
+  padding: 0.9em 1.8em;
+  background: linear-gradient(45deg, #4da6e7 0%, #0e4b8b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.5px;
   text-decoration: none;
-  font-weight: 600;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: all 0.4s ease;
-  box-shadow: 0 0 14px 1px #00bfe7;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(14, 75, 139, 0.4);
 }
 
+/* Animación de fondo en hover */
 .btn__project::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #4d21ff, #ff2975);
+  background: linear-gradient(45deg, #0e4b8b, #4da6e7);
+  transition: left 0.4s ease;
   z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.btn__project::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #4d21ff, #f20574, #4d21ff);
-  z-index: -2;
-  /* border-radius: 32px; */
-  opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
 .btn__project:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(77, 33, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(14, 75, 139, 0.6);
 }
 
 .btn__project:hover::before {
-  opacity: 1;
+  left: 0;
 }
 
-.btn__project:hover::after {
-  opacity: 1;
-}
-
+/* Transición para el SVG */
 .btn__project svg {
   transition: transform 0.3s ease;
+  font-size: 1.2rem;
+}
+.btn__project .fi {
+  transition: transform 0.3s ease;
+  font-size: 1.2rem;
 }
 
 .btn__project:hover svg {
   transform: translateX(4px);
 }
 
+.btn__project.demo {
+  /* por ejemplo invertir gradiente o darle otro matiz */
+  background: linear-gradient(45deg, #0e4b8b 0%, #4da6e7 100%);
+}
 /* Imagen de fondo con efecto parallax */
 .image__backg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0.7;
   z-index: 1;
-  filter: blur(10px) saturate(1.5);
+  filter: blur(2px) saturate(1);
   transform: translate(-5%, -5%);
   transition: transform 0.6s ease-out;
-}
-
-section:hover .image__backg {
-  transform: translate(-3%, -3%) scale(1.03);
 }
 
 /* Ajustes para el carrusel de PrimeNG */
