@@ -5,16 +5,19 @@ import Project from '../interfaces/project.interface';
 import { lastValueFrom } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectsService {
   private httpClient = inject(HttpClient);
   private apiUrlProjects = `${environment.apiUrl}/api/projects`;
+
   async getAllProjects(): Promise<Project[]> {
     return lastValueFrom(this.httpClient.get<Project[]>(this.apiUrlProjects));
   }
 
   async getProjectById(id: number): Promise<Project> {
-    return lastValueFrom(this.httpClient.get<Project>(`${this.apiUrlProjects}/${id}`));
+    return lastValueFrom(
+      this.httpClient.get<Project>(`${this.apiUrlProjects}/${id}`)
+    );
   }
 }

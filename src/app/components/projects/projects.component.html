@@ -12,11 +12,10 @@
             <div class="inner__descriptionText site-container">
               <div class="outer__projectBox">
                 <div class="project__image">
-                  <img [src]="project.imagenDestacada" class="about-me__profile" [alt]="project.titulo" />
+                  <img class="about-me__profile" [alt]="project.titulo" />
                 </div>
                 <div class="projectBox--bottom">
                   <h3 class="project--title">{{ project.titulo }}</h3>
-
                 </div>
               </div>
               <div class="project__description">
@@ -25,17 +24,37 @@
                 <div class="tech__list">
                   @for (skill of project.tecnologiasConIcono; track $index) {
                   <span class="list--item">
-                    <img [src]="skill.icon" [alt]="skill.skill" width="20" height="20" />
+                    <img
+                      [src]="skill.icon"
+                      [alt]="skill.skill"
+                      width="20"
+                      height="20"
+                    />
                     {{ skill.skill }}
                   </span>
                   }
                 </div>
                 <div class="project__actions">
-                  <a [href]="project.urlGitHub" target="_blank" rel="noopener noreferrer" class="btn__project code">
+                  <a
+                    [href]="project.urlGitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn__project code"
+                  >
                     <span>Ver código</span>
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                      stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37
+                    <svg
+                      stroke="currentColor"
+                      fill="none"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37
                                  3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54
                                  6.44-7A5.44 5.44 0 0 0 20 4.77 5.07
                                  5.07 0 0 0 19.91 1S18.73.65 16
@@ -43,17 +62,23 @@
                                  5.09 1 5.09 1A5.07 5.07 0 0 0 5
                                  4.77a5.44 5.44 0 0 0-1.5 3.78c0
                                  5.42 3.3 6.61 6.44 7A3.37 3.37
-                                 0 0 0 9 18.13V22"></path>
+                                 0 0 0 9 18.13V22"
+                      ></path>
                     </svg>
                   </a>
-                  <a [href]="project.urlDemo" target="_blank" rel="noopener noreferrer" class="btn__project demo">
+                  <a
+                    [href]="project.urlDemo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn__project demo"
+                  >
                     <span>Ver demo</span>
                     <i class="fi fi-tr-site-alt"></i>
                   </a>
                 </div>
               </div>
             </div>
-            <div class="image__backg" [style.backgroundImage]="'url(' + project.imagenDestacada + ')'"></div>
+            <div class="image__backg" [style.backgroundImage]=""></div>
           </section>
           }
         </div>
