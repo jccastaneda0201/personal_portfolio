@@ -1,17 +1,15 @@
+// src/app/interfaces/project.interface.ts
+
+import ImgContent from './imgcontent.interface';
+
 export default interface Project {
-  id?: number;
+  _id: string; // ✅ Mongo devuelve _id
   titulo: string;
   descripcion: string;
-  tecnologias: string[]; // CORREGIDO: Usar 'string[]' en lugar de 'String'
   categoria: string;
+  tecnologias: string[];
   urlGitHub: string;
   urlDemo: string;
-  tecnologiasConIcono?: { skill: string; icon: string }[]; // Nuevo campo opcional
-}
-
-export interface ProjectImg {
-  id?: number;
-  title: string;
-  url: string;
-  image?: string;
+  tecnologiasConIcono?: { skill: string; icon: string }[];
+  projectImg?: ImgContent[]; // ✅ array de imágenes asociadas
 }

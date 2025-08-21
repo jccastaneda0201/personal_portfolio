@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { createClient } from 'contentful';
-import { ProjectImg } from '../interfaces/project.interface';
+import ImgContent from '../interfaces/imgcontent.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class ContentfulService {
   @Injectable({
     providedIn: 'root',
   })
-  async getProjects(): Promise<ProjectImg[]> {
+  async getProjects(): Promise<ImgContent[]> {
     try {
       const response = await this.client.getEntries({
         content_type: 'projects',
@@ -26,7 +26,7 @@ export class ContentfulService {
         const { title, url, image } = item.fields;
         const id = item.sys.id;
         const img = image?.fields?.file?.url;
-        return { title, url, img, id } as ProjectImg;
+        return { title, url, img, id } as ImgContent;
       });
     } catch (error) {
       console.error('Error fetching projects:', error);

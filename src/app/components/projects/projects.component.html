@@ -7,12 +7,16 @@
 
       <div class="container projects-grid">
         <div class="project__container">
-          @for (project of projects; track $index) {
+          @for (project of projects; track project._id) {
           <section class="wrapper">
             <div class="inner__descriptionText site-container">
               <div class="outer__projectBox">
                 <div class="project__image">
-                  <img class="about-me__profile" [alt]="project.titulo" />
+                  <img
+                    class="about-me__profile"
+                    [src]="project.projectImg?.[0]?.img"
+                    [alt]="project.projectImg?.[0]?.title || project.titulo"
+                  />
                 </div>
                 <div class="projectBox--bottom">
                   <h3 class="project--title">{{ project.titulo }}</h3>
@@ -67,7 +71,7 @@
                     </svg>
                   </a>
                   <a
-                    [href]="project.urlDemo"
+                    [href]="project.projectImg?.[0]?.url"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn__project demo"
@@ -78,7 +82,10 @@
                 </div>
               </div>
             </div>
-            <div class="image__backg" [style.backgroundImage]=""></div>
+            <div
+              class="image__backg"
+              [style.backgroundImage]="'url(' + project.projectImg?.[0]?.img + ')'"
+            ></div>
           </section>
           }
         </div>
