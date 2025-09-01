@@ -6,18 +6,16 @@ import User from '../../interfaces/user.interface';
   selector: 'app-aboutme',
   imports: [],
   templateUrl: './aboutme.component.html',
-  styleUrl: './aboutme.component.css'
+  styleUrl: './aboutme.component.css',
 })
 export class AboutmeComponent {
-  userService = inject(UsersService)
-  usuario: User[] = []
+  userService = inject(UsersService);
+  usuario: User[] = [];
 
   async ngOnInit() {
     try {
-      this.usuario = await this.userService.getAllUsers()
-      console.log(this.usuario);
-    }
-    catch (error) {
+      this.usuario = await this.userService.getAllUsers();
+    } catch (error) {
       console.error('Error:', error);
     }
   }

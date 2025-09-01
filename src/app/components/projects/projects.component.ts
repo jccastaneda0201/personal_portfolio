@@ -72,8 +72,6 @@ export class ProjectsComponent {
       this.projectImg = await this.ContentfulService.getProjects();
       this.assignIcons();
       this.assignImages();
-      console.log(this.projects);
-      console.log('hola', this.projectImg);
     } catch (error) {
       console.error('Error:', error);
     }

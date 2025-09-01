@@ -4,13 +4,12 @@ import { RouterModule } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import User from '../../interfaces/user.interface';
 
-
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   isLeftSidebarCollapsed = input.required<boolean>();
@@ -48,15 +47,13 @@ export class NavbarComponent {
     },
   ];
 
-  userService = inject(UsersService)
-  usuario: User[] = []
+  userService = inject(UsersService);
+  usuario: User[] = [];
   isNavbarCollapsed = true;
-
 
   async ngOnInit() {
     try {
       this.usuario = await this.userService.getAllUsers();
-      console.log("Usuarios cargados: ", this.usuario);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -77,7 +74,9 @@ export class NavbarComponent {
       let element = document.getElementById(sectionId);
 
       if (!element) {
-        console.warn(`⚠️ No se encontró la sección con id: "${sectionId}". Esperando...`);
+        console.warn(
+          `⚠️ No se encontró la sección con id: "${sectionId}". Esperando...`
+        );
         const observer = new MutationObserver(() => {
           element = document.getElementById(sectionId);
           if (element) {
@@ -93,8 +92,6 @@ export class NavbarComponent {
     }, 200);
   }
 }
-
-
 
 // import { Component } from '@angular/core';
 // import { Router, RouterLink } from '@angular/router';
@@ -123,12 +120,6 @@ export class NavbarComponent {
 //   }
 // }
 
-
-
-
-
-
-
 // import { Component, inject } from '@angular/core';
 // import { Router, RouterLink } from '@angular/router';
 // import { UsersService } from '../../services/users.service';
@@ -148,7 +139,6 @@ export class NavbarComponent {
 //   router = inject(Router)
 //   isNavbarCollapsed = true;
 
-
 //   async ngOnInit() {
 //     try {
 //       this.usuario = await this.userService.getAllUsers();
@@ -159,12 +149,12 @@ export class NavbarComponent {
 //   }
 
 //   toggleNavbar() {
-//     this.isNavbarCollapsed = !this.isNavbarCollapsed; 
+//     this.isNavbarCollapsed = !this.isNavbarCollapsed;
 //     console.log("Navbar colapsado:", this.isNavbarCollapsed);
 //   }
 
 //   scrollToSection(sectionId: string) {
-//     if (!sectionId) return; 
+//     if (!sectionId) return;
 
 //     setTimeout(() => {
 //       let element = document.getElementById(sectionId);
@@ -174,7 +164,7 @@ export class NavbarComponent {
 //         const observer = new MutationObserver(() => {
 //           element = document.getElementById(sectionId);
 //           if (element) {
-//             observer.disconnect(); 
+//             observer.disconnect();
 //             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 //           }
 //         });
@@ -182,9 +172,7 @@ export class NavbarComponent {
 //       } else {
 //         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 //       }
-//     }, 200); 
+//     }, 200);
 //   }
 
-
 // }
-
